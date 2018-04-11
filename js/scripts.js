@@ -13,31 +13,32 @@ $(document).ready(function() {
     var box6 = $("input:radio[name=cell6]:checked").val();
     var boxes = [box1, box2, box3, box4, box5, box6];
     // $("input[name=cell1]").attr("checked", false); supposed to reset the clicked function in the radio buttons
-    var clickValue = boxes.forEach(function(element) {
-      comparisonArray.push(element)
-    });
-    var sortArray =comparisonArray.sort();
+    var clickValue;
+    var sortArray;
+
     if (turn === 0) {
       turn +=1;
 
-      // boxes.forEach(function(element) {
-      //   comparisonArray.push(element)
-      // });
     } else {
         turn -= 1;
-        clickValue;
+        clickValue = boxes.forEach(function(element) {
+          comparisonArray.push(element)
+        });
+        sortArray = comparisonArray.sort();
 
-        // boxes.forEach(function(element) {
-        //   comparisonArray.push(element)
-        // });
-      //   if (clickOne === clickTwo) {
-      //   alert("match. now jimmy needs to disable the buttons");
-      // } else {
-      //   alert("no match. the cards need to flip back over now!");
-      // }
+
+        if (sortArray[0] === sortArray[1]) {
+        alert("match. now jimmy needs to disable the buttons");
+        comparisonArray = [];
+        //need to add code so that the radio buttons clear their values
+      } else {
+        alert("no match. the cards need to flip back over now!");
+        comparisonArray = [];
+        //need to add code so that the radio buttons clear their values
+      }
     }
     console.log(turn);
-    // console.log(sortArray);
+    console.log(sortArray);
     // if (turn === 1) {  //this is an earlier version of the click function to push the value of the clicked cell into an array
     //   boxes.forEach(function(element) {
     //     if (element) {
