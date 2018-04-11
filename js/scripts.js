@@ -4,14 +4,29 @@ var clickOne;
 var clickTwo;
 
 $(document).ready(function() {
+  var box1 = $("input:radio[name=cell1]:checked").val();
+  var box2 = $("input:radio[name=cell2]:checked").val();
+  var box3 = $("input:radio[name=cell3]:checked").val();
+  var box4 = $("input:radio[name=cell4]:checked").val();
+  var box5 = $("input:radio[name=cell5]:checked").val();
+  var box6 = $("input:radio[name=cell6]:checked").val();
+  var boxes = [box1, box2, box3, box4, box5, box6];
+
+
+  $(".table").click(function() {  //the goal of this function is to count the length of all the strings in the populated array, and then see if there are 2 numbers that are not 'undefined'
+    if (boxes.% 1 === 0) {
+
+    }
+  })
+
   $("#end-turn").click(function() {
-    var box1 = $("input:radio[name=cell1]:checked").val();
-    var box2 = $("input:radio[name=cell2]:checked").val();
-    var box3 = $("input:radio[name=cell3]:checked").val();
-    var box4 = $("input:radio[name=cell4]:checked").val();
-    var box5 = $("input:radio[name=cell5]:checked").val();
-    var box6 = $("input:radio[name=cell6]:checked").val();
-    var boxes = [box1, box2, box3, box4, box5, box6];
+    // var box1 = $("input:radio[name=cell1]:checked").val();
+    // var box2 = $("input:radio[name=cell2]:checked").val();
+    // var box3 = $("input:radio[name=cell3]:checked").val();
+    // var box4 = $("input:radio[name=cell4]:checked").val();
+    // var box5 = $("input:radio[name=cell5]:checked").val();
+    // var box6 = $("input:radio[name=cell6]:checked").val();
+    // var boxes = [box1, box2, box3, box4, box5, box6];  //captured in lines 7-13
     // $("input[name=cell1]").attr("checked", false); supposed to reset the clicked function in the radio buttons
     var clickValue;
     var sortArray;
